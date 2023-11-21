@@ -8,10 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    let api = NiceHashAPI()
+    @State private var counter = 0
     @State var nicehashOnlineDevicesNumber: Int = 0
     @State var isSpacePoolOnline: Bool = true
     @State var isNoSSDPoolOnline: Bool = false
-    let api = NiceHashAPI(numberOfDevices: 1)
+    
+    init() {
+        api.getData()
+    }
 
     var body: some View {
         VStack {
@@ -47,6 +52,11 @@ struct ContentView: View {
                                 Text(String(nicehashOnlineDevicesNumber))
                                     .font(.title)
                                     .bold()
+                                    .onAppear(perform: {
+                                        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { time in
+                                            nicehashOnlineDevicesNumber = api.getTotalDevices()
+                                        }
+                                    })
                             }
                         }
                     }
