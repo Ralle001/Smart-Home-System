@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct Smart_HomeApp: App {
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

@@ -11,6 +11,8 @@
 		DC26E1322B0D0BDF00004BD9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC26E1312B0D0BDF00004BD9 /* ContentView.swift */; };
 		DC26E1342B0D0BE100004BD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC26E1332B0D0BE100004BD9 /* Assets.xcassets */; };
 		DC26E1382B0D0BE100004BD9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC26E1372B0D0BE100004BD9 /* Preview Assets.xcassets */; };
+		DC26E13F2B0D2BDE00004BD9 /* NiceHashAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC26E13E2B0D2BDE00004BD9 /* NiceHashAPI.swift */; };
+		DC26E1462B0D33DF00004BD9 /* SwiftyNiceHash in Frameworks */ = {isa = PBXBuildFile; productRef = DC26E1452B0D33DF00004BD9 /* SwiftyNiceHash */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,7 @@
 		DC26E1332B0D0BE100004BD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC26E1352B0D0BE100004BD9 /* Smart_Home.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Smart_Home.entitlements; sourceTree = "<group>"; };
 		DC26E1372B0D0BE100004BD9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DC26E13E2B0D2BDE00004BD9 /* NiceHashAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiceHashAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC26E1462B0D33DF00004BD9 /* SwiftyNiceHash in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				DC26E12F2B0D0BDF00004BD9 /* Smart_HomeApp.swift */,
+				DC26E13E2B0D2BDE00004BD9 /* NiceHashAPI.swift */,
 				DC26E1312B0D0BDF00004BD9 /* ContentView.swift */,
 				DC26E1332B0D0BE100004BD9 /* Assets.xcassets */,
 				DC26E1352B0D0BE100004BD9 /* Smart_Home.entitlements */,
@@ -85,6 +90,9 @@
 			dependencies = (
 			);
 			name = "Smart Home";
+			packageProductDependencies = (
+				DC26E1452B0D33DF00004BD9 /* SwiftyNiceHash */,
+			);
 			productName = "Smart Home";
 			productReference = DC26E12C2B0D0BDF00004BD9 /* Smart Home.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +121,9 @@
 				Base,
 			);
 			mainGroup = DC26E1232B0D0BDF00004BD9;
+			packageReferences = (
+				DC26E1442B0D33DF00004BD9 /* XCRemoteSwiftPackageReference "SwiftyNiceHash" */,
+			);
 			productRefGroup = DC26E12D2B0D0BDF00004BD9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -141,6 +152,7 @@
 			files = (
 				DC26E1322B0D0BDF00004BD9 /* ContentView.swift in Sources */,
 				DC26E1302B0D0BDF00004BD9 /* Smart_HomeApp.swift in Sources */,
+				DC26E13F2B0D2BDE00004BD9 /* NiceHashAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,16 +286,17 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -312,16 +325,17 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -359,6 +373,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DC26E1442B0D33DF00004BD9 /* XCRemoteSwiftPackageReference "SwiftyNiceHash" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/edualm/SwiftyNiceHash.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DC26E1452B0D33DF00004BD9 /* SwiftyNiceHash */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC26E1442B0D33DF00004BD9 /* XCRemoteSwiftPackageReference "SwiftyNiceHash" */;
+			productName = SwiftyNiceHash;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DC26E1242B0D0BDF00004BD9 /* Project object */;
 }
