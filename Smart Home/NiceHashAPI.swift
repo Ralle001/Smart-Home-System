@@ -8,6 +8,7 @@
 import Foundation
 import CryptoKit
 import SwiftyNiceHash
+import UserNotifications
 
 class NiceHashAPI: ObservableObject {
     var output: NiceHashResponse.MiningRigs2?
@@ -24,6 +25,7 @@ class NiceHashAPI: ObservableObject {
                     print(error)
                 }
                 
+                
             case .failure:
                 print("")
             }
@@ -32,6 +34,13 @@ class NiceHashAPI: ObservableObject {
     
     func getTotalDevices() -> Int {
         getData()
+        while output?.totalDevices == nil {
+            sleep(1)
+        }
+        print("API output: " + String(output!.totalDevices))
+        if output!.totalDevices == 0 {
+            print("Problemo")
+        }
         return output!.totalDevices
     }
 }

@@ -10,9 +10,13 @@ import SwiftUI
 @main
 struct Smart_HomeApp: App {
     
+    @Environment(\.scenePhase) private var scenePhase
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
-    }
+    }    
 }
+
+
+

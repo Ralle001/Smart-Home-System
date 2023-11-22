@@ -6,17 +6,18 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct ContentView: View {
     let api = NiceHashAPI()
-    @State private var counter = 0
-    @State var nicehashOnlineDevicesNumber: Int = 0
+    var nicehashOnlineDevicesNumber: Int = 99
     @State var isSpacePoolOnline: Bool = true
     @State var isNoSSDPoolOnline: Bool = false
     
     init() {
-        api.getData()
+        self.nicehashOnlineDevicesNumber = api.getTotalDevices()
     }
+
 
     var body: some View {
         VStack {
@@ -41,7 +42,6 @@ struct ContentView: View {
                         }
                         HStack {
                             // The bottom left circle
-                            // TODO: It should display how many devices are active
                             ZStack {
                                 RoundedRectangle(cornerRadius: 25)
                                     .foregroundColor(.clear)
@@ -52,11 +52,6 @@ struct ContentView: View {
                                 Text(String(nicehashOnlineDevicesNumber))
                                     .font(.title)
                                     .bold()
-                                    .onAppear(perform: {
-                                        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { time in
-                                            nicehashOnlineDevicesNumber = api.getTotalDevices()
-                                        }
-                                    })
                             }
                         }
                     }
