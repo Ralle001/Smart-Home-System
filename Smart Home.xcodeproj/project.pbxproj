@@ -12,7 +12,10 @@
 		DC26E1342B0D0BE100004BD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC26E1332B0D0BE100004BD9 /* Assets.xcassets */; };
 		DC26E1382B0D0BE100004BD9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC26E1372B0D0BE100004BD9 /* Preview Assets.xcassets */; };
 		DC26E13F2B0D2BDE00004BD9 /* NiceHashAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC26E13E2B0D2BDE00004BD9 /* NiceHashAPI.swift */; };
-		DC26E1462B0D33DF00004BD9 /* SwiftyNiceHash in Frameworks */ = {isa = PBXBuildFile; productRef = DC26E1452B0D33DF00004BD9 /* SwiftyNiceHash */; };
+		DC890C2D2B0F4F2600ECE02B /* NiceHashConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC890C2C2B0F4F2600ECE02B /* NiceHashConnection.swift */; };
+		DC890C2F2B0F4F5000ECE02B /* NiceHashResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC890C2E2B0F4F5000ECE02B /* NiceHashResponse.swift */; };
+		DC890C312B0F4F6200ECE02B /* RequestSigner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC890C302B0F4F6200ECE02B /* RequestSigner.swift */; };
+		DC890C342B0F506100ECE02B /* SpacePoolAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC890C332B0F506100ECE02B /* SpacePoolAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,10 @@
 		DC26E1372B0D0BE100004BD9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DC26E13E2B0D2BDE00004BD9 /* NiceHashAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiceHashAPI.swift; sourceTree = "<group>"; };
 		DC26E1472B0DE59B00004BD9 /* Smart-Home-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Smart-Home-Info.plist"; sourceTree = SOURCE_ROOT; };
+		DC890C2C2B0F4F2600ECE02B /* NiceHashConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiceHashConnection.swift; sourceTree = "<group>"; };
+		DC890C2E2B0F4F5000ECE02B /* NiceHashResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiceHashResponse.swift; sourceTree = "<group>"; };
+		DC890C302B0F4F6200ECE02B /* RequestSigner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestSigner.swift; sourceTree = "<group>"; };
+		DC890C332B0F506100ECE02B /* SpacePoolAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacePoolAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,7 +38,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC26E1462B0D33DF00004BD9 /* SwiftyNiceHash in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +63,7 @@
 		DC26E12E2B0D0BDF00004BD9 /* Smart Home */ = {
 			isa = PBXGroup;
 			children = (
+				DC890C352B0F58A100ECE02B /* SpacePool API */,
 				DC26E1472B0DE59B00004BD9 /* Smart-Home-Info.plist */,
 				DC26E12F2B0D0BDF00004BD9 /* Smart_HomeApp.swift */,
 				DC26E13E2B0D2BDE00004BD9 /* NiceHashAPI.swift */,
@@ -64,6 +71,7 @@
 				DC26E1332B0D0BE100004BD9 /* Assets.xcassets */,
 				DC26E1352B0D0BE100004BD9 /* Smart_Home.entitlements */,
 				DC26E1362B0D0BE100004BD9 /* Preview Content */,
+				DC890C322B0F501E00ECE02B /* NiceHash API */,
 			);
 			path = "Smart Home";
 			sourceTree = "<group>";
@@ -74,6 +82,25 @@
 				DC26E1372B0D0BE100004BD9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DC890C322B0F501E00ECE02B /* NiceHash API */ = {
+			isa = PBXGroup;
+			children = (
+				DC890C2C2B0F4F2600ECE02B /* NiceHashConnection.swift */,
+				DC890C2E2B0F4F5000ECE02B /* NiceHashResponse.swift */,
+				DC890C302B0F4F6200ECE02B /* RequestSigner.swift */,
+			);
+			name = "NiceHash API";
+			sourceTree = "<group>";
+		};
+		DC890C352B0F58A100ECE02B /* SpacePool API */ = {
+			isa = PBXGroup;
+			children = (
+				DC890C332B0F506100ECE02B /* SpacePoolAPI.swift */,
+			);
+			name = "SpacePool API";
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -93,7 +120,6 @@
 			);
 			name = "Smart Home";
 			packageProductDependencies = (
-				DC26E1452B0D33DF00004BD9 /* SwiftyNiceHash */,
 			);
 			productName = "Smart Home";
 			productReference = DC26E12C2B0D0BDF00004BD9 /* Smart Home.app */;
@@ -124,7 +150,6 @@
 			);
 			mainGroup = DC26E1232B0D0BDF00004BD9;
 			packageReferences = (
-				DC26E1442B0D33DF00004BD9 /* XCRemoteSwiftPackageReference "SwiftyNiceHash" */,
 			);
 			productRefGroup = DC26E12D2B0D0BDF00004BD9 /* Products */;
 			projectDirPath = "";
@@ -153,8 +178,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC26E1322B0D0BDF00004BD9 /* ContentView.swift in Sources */,
+				DC890C312B0F4F6200ECE02B /* RequestSigner.swift in Sources */,
 				DC26E1302B0D0BDF00004BD9 /* Smart_HomeApp.swift in Sources */,
+				DC890C2D2B0F4F2600ECE02B /* NiceHashConnection.swift in Sources */,
+				DC890C342B0F506100ECE02B /* SpacePoolAPI.swift in Sources */,
 				DC26E13F2B0D2BDE00004BD9 /* NiceHashAPI.swift in Sources */,
+				DC890C2F2B0F4F5000ECE02B /* NiceHashResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,25 +408,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		DC26E1442B0D33DF00004BD9 /* XCRemoteSwiftPackageReference "SwiftyNiceHash" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/edualm/SwiftyNiceHash.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		DC26E1452B0D33DF00004BD9 /* SwiftyNiceHash */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DC26E1442B0D33DF00004BD9 /* XCRemoteSwiftPackageReference "SwiftyNiceHash" */;
-			productName = SwiftyNiceHash;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DC26E1242B0D0BDF00004BD9 /* Project object */;
 }
