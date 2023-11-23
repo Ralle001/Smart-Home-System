@@ -15,9 +15,10 @@ struct ContentView: View {
     var nicehashOnlineDevicesNumber: Int = 99
     @State var isSpacePoolOnline: Bool
     @State var isNoSSDPoolOnline: Bool = false
-    @State var nicehashAPIKey: String = ""
-    @State var nicehashAPIORG: String = ""
-    @State var nicehashAPISecret: String = ""
+    @State var nicehashAPIKey: String
+    @State var nicehashAPIORG: String
+    @State var nicehashAPISecret: String
+    let defaults = UserDefaults.standard
     
     init() {
         self.nicehashOnlineDevicesNumber = api.getTotalDevices()
@@ -28,6 +29,24 @@ struct ContentView: View {
         }
         else {
             self.isSpacePoolOnline = false
+        }
+        if defaults.string(forKey: "nicehashAPIKey") != nil {
+            self.nicehashAPIKey = defaults.string(forKey: "nicehashAPIKey")!
+        }
+        else {
+            self.nicehashAPIKey = ""
+        }
+        if defaults.string(forKey: "nicehashAPISecret") != nil {
+            self.nicehashAPISecret = defaults.string(forKey: "nicehashAPISecret")!
+        }
+        else {
+            self.nicehashAPISecret = ""
+        }
+        if defaults.string(forKey: "nicehashAPIORG") != nil {
+            self.nicehashAPIORG = defaults.string(forKey: "nicehashAPIORG")!
+        }
+        else {
+            self.nicehashAPIORG = ""
         }
     }
 
@@ -148,6 +167,20 @@ struct ContentView: View {
                         SecureField(text: $nicehashAPIORG, prompt:
                             Text("NiceHash ORG ID")) {
                         }
+                        Button {
+                            if nicehashAPIKey != ""{
+                                defaults.set(nicehashAPIKey, forKey: "nicehashAPIKey")
+                            }
+                            if nicehashAPISecret != ""{
+                                defaults.set(nicehashAPISecret, forKey: "nicehashAPISecret")
+                            }
+                            if nicehashAPIORG != ""{
+                                defaults.set(nicehashAPIORG, forKey: "nicehashAPIORG")
+                            }
+                        } label: {
+                            Text("Submit")
+                        }
+
                     }.frame(height: 200)
                 }
             }
