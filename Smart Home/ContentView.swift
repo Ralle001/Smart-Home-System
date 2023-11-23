@@ -15,6 +15,9 @@ struct ContentView: View {
     var nicehashOnlineDevicesNumber: Int = 99
     @State var isSpacePoolOnline: Bool
     @State var isNoSSDPoolOnline: Bool = false
+    @State var nicehashAPIKey: String = ""
+    @State var nicehashAPIORG: String = ""
+    @State var nicehashAPISecret: String = ""
     
     init() {
         self.nicehashOnlineDevicesNumber = api.getTotalDevices()
@@ -134,7 +137,20 @@ struct ContentView: View {
                 .tabItem {
                     Label("EV", systemImage: "bolt.car")
                 }
-            Text("Settings Page")
+            ScrollView{
+                VStack {
+                    Text("Settings")
+                    Form {
+                        SecureField(text: $nicehashAPIKey, prompt: Text("NiceHash API Key")) {
+                        }
+                        SecureField(text: $nicehashAPISecret, prompt: Text("NiceHash API Secret")) {
+                        }
+                        SecureField(text: $nicehashAPIORG, prompt:
+                            Text("NiceHash ORG ID")) {
+                        }
+                    }.frame(height: 200)
+                }
+            }
                 .tabItem {
                     Label("Settings", systemImage: "gear")
                 }
